@@ -65,10 +65,19 @@ functions:
           method: get
   update:
     # Defines an HTTP API endpoint that calls the main function in update.js
-    # -path: url path is /notes{id}
+    # -path: url path is /notes/{id}
     # -method: PUT
       handler: update.main
       events:
         - http:
             path: notes/{id}
             method: put
+  delete:
+    # Defines an HTTP API endpoint that calls the main function in delete.js
+    # -path: url path is /notes/{id}
+    # -method: DELETE
+    handler: delete.main
+    events:
+      - http:
+          path: notes/{id}
+          method: delete
