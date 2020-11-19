@@ -46,11 +46,20 @@ functions:
           path: notes
           method: post
   get:
-    # Defines and HTTP endpoint that calls the main function in get.js
+    # Defines an HTTP API endpoint that calls the main function in get.js
     # -path: url path is /notes/{id}
     # - method: GET
     handler: get.main
     events:
         - http:
           path: notes/{id}
+          method: get
+  list:
+    # Defines an HTTP API endpoint that calls the main function in list.js
+    # -path: url path is /notes
+    # -method: GET
+    handler: list.main
+    events:
+      - http:
+          path: notes
           method: get
