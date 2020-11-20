@@ -9,7 +9,7 @@ export const main = handler(async (event, context) => {
     const params = {
         TableName: process.env.tableName,
         Item: {
-            userId: '123', // id of author
+            userId: event.requestContext.identity.cognitoIdentityId, // id of author
             noteId: uuid.v1(), // unique uuid
             content: data.content,
             attachment: data.attachment,
