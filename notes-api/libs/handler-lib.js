@@ -14,7 +14,11 @@ export default function handler(lambda) {
         // return HTTP response
         return {
             statusCode,
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-AllowCredentials': true,
+            }
         };
     };
 }
